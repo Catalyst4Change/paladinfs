@@ -1,10 +1,11 @@
 import { Hero } from "./Hero/Hero"
 import "./App.scss"
-import { useState } from "react"
+import { Header } from "./Header/Header"
 
 function App() {
   return (
     <>
+      <Header />
       <Hero />
     </>
   )
