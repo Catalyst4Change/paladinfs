@@ -14,6 +14,7 @@
   top: 0;
   white-space: nowrap;
   color: $primary-color;
+  z-index: 1;
 
   .header-menu {
     display: flex;
@@ -22,6 +23,7 @@
     min-width: 0;
 
     .hamburger {
+      margin-right: 5px;
       cursor: pointer;
       .hamburger-slice {
         width: 30px;
@@ -49,6 +51,7 @@
     }
   }
   .header-item {
+    margin: 0 5px;
     display: flex;
     align-items: center;
     .icon-container {
@@ -60,5 +63,28 @@
         width: 100%;
       }
     }
+  }
+}
+.sliding-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  top: 70px;
+  left: -300px;
+  width: 300px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.25s ease-in-out;
+
+  p {
+    color: $primary-color;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    width: 50%;
+  }
+  &.active {
+    left: 0px;
   }
 }

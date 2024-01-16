@@ -10,39 +10,47 @@ export const Header = () => {
     setMenuOpen(!menuOpen)
   }
   return (
-    <main className="header">
-      <section className="header-menu">
-        <div className="hamburger" onClick={toggleMenu}>
-          <div
-            className={`hamburger-slice line-1 ${menuOpen ? "active" : ""}`}
-          ></div>
-          <div
-            className={`hamburger-slice line-2 ${menuOpen ? "active" : ""}`}
-          ></div>
-          <div
-            className={`hamburger-slice line-3 ${menuOpen ? "active" : ""}`}
-          ></div>
-        </div>
-        <h1 className="header-title">Paladin Fiduciary Services LLC</h1>
+    <main>
+      <section className="header">
+        <section className="header-menu">
+          <div className="hamburger" onClick={toggleMenu}>
+            <div
+              className={`hamburger-slice line-1 ${menuOpen ? "active" : ""}`}
+            ></div>
+            <div
+              className={`hamburger-slice line-2 ${menuOpen ? "active" : ""}`}
+            ></div>
+            <div
+              className={`hamburger-slice line-3 ${menuOpen ? "active" : ""}`}
+            ></div>
+          </div>
+          <h1 className="header-title">Paladin Fiduciary Services LLC</h1>
+        </section>
+        <section className="header-item">
+          <div className="icon-container">
+            <img src={quote} alt="list icon" />
+          </div>
+          <span className="header-item-text">Get Quote</span>
+        </section>
+        <section className="header-item">
+          <div className="icon-container">
+            <img src={phone} alt="phone icon" />
+          </div>
+          <span className="header-item-text">Call Now</span>
+        </section>
+        <section className="header-item">
+          <div className="icon-container">
+            <img src={directions} alt="arrow sign icon" />
+          </div>
+          <span className="header-item-text">Get Directions</span>
+        </section>
       </section>
-      <section className="header-item">
-        <div className="icon-container">
-          <img src={quote} alt="list icon" />
-        </div>
-        <span className="header-item-text">Get Quote</span>
-      </section>
-      <section className="header-item">
-        <div className="icon-container">
-          <img src={phone} alt="phone icon" />
-        </div>
-        <span className="header-item-text">Call Now</span>
-      </section>
-      <section className="header-item">
-        <div className="icon-container">
-          <img src={directions} alt="arrow sign icon" />
-        </div>
-        <span className="header-item-text">Get Directions</span>
-      </section>
+      <div className={`sliding-menu ${menuOpen ? "active" : ""}`}>
+        <p className="menu-item">Testimonials</p>
+        <p className="menu-item">About Us</p>
+        <p className="menu-item">Gallery</p>
+        <p className="menu-item">Contact</p>
+      </div>
     </main>
   )
 }
