@@ -12,21 +12,27 @@ export const Header = () => {
   }
 
   const handleKeyDown = (event) => {
+    const focusOnBurger = () => {
+      document.querySelector(".hamburger").focus()
+    }
     console.log(event.key)
     if (
       (!menuOpen && event.key === "Enter") ||
       (!menuOpen && event.key === " ")
     ) {
-      // Trigger menu open on Enter or Space key Down
       event.preventDefault()
       toggleMenu()
     } else if (menuOpen && event.key === " ") {
       event.preventDefault()
+      setMenuOpen(false)
+      focusOnBurger()
     } else if (menuOpen && event.key === "Escape") {
       setMenuOpen(false)
-      document.querySelector(".hamburger").focus()
+      focusOnBurger()
     }
   }
+
+  // add escape anywhere to close menu
 
   useEffect(() => {
     if (menuOpen) {
@@ -81,6 +87,7 @@ export const Header = () => {
         <ul>
           <li>
             <a
+              className="first-option"
               tabIndex={menuOpen ? 1 : -1}
               onKeyDown={handleKeyDown}
               href="http://www.test.com"
@@ -89,17 +96,30 @@ export const Header = () => {
             </a>
           </li>
           <li>
-            <a tabIndex={menuOpen ? 1 : -1} onKeyDown={handleKeyDown} href="">
+            <a
+              tabIndex={menuOpen ? 1 : -1}
+              onKeyDown={handleKeyDown}
+              href="http://www.test.com"
+            >
               About Us
             </a>
           </li>
           <li>
-            <a tabIndex={menuOpen ? 1 : -1} onKeyDown={handleKeyDown} href="">
+            <a
+              tabIndex={menuOpen ? 1 : -1}
+              onKeyDown={handleKeyDown}
+              href="http://www.test.com"
+            >
               Gallery
             </a>
           </li>
           <li>
-            <a tabIndex={menuOpen ? 1 : -1} onKeyDown={handleKeyDown} href="">
+            <a
+              className="last-option"
+              tabIndex={menuOpen ? 1 : -1}
+              onKeyDown={handleKeyDown}
+              href="http://www.test.com"
+            >
               Contact
             </a>
           </li>
