@@ -1,0 +1,10 @@
+$primary-color: #48487f;
+
+button {
+  all: unset;
+  background-color: $primary-color;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 3% 10%;
+  margin: 4%;
+}
