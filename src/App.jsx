@@ -1,6 +1,7 @@
 import { Header } from "./Header/Header"
 import { Hero } from "./Hero/Hero"
 import { ArticleGrid } from "./ArticleGrid/ArticleGrid"
+import { AboutUs } from "./AboutUs/AboutUs"
 import "./App.scss"
 import { useState } from "react"
 
@@ -25,6 +26,7 @@ function App() {
       <ArticleGrid title={"What's A Fiduciary?"} articles={updates} />
       <div className="divider"></div>
       <ArticleGrid title={"Testimonials"} articles={testimonials} />
+      <AboutUs />
     </main>
   )
 }

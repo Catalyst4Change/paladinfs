@@ -20,9 +20,8 @@ export const ArticleGrid = ({ title, articles }) => {
       <div className="article-grid">
         {articles.map((article, index) => {
           return (
-            <div className="article-container">
+            <div className="article-container" key={index}>
               <Article
-                key={index}
                 postDate={article.postDate}
                 title={article.title}
                 content={article.content}
