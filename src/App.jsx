@@ -5,12 +5,12 @@ import "./App.scss"
 
 function App() {
   return (
-    <>
+    <main className="App">
       <Header />
       <Hero />
       <div className="divider"></div>
       <Updates />
-    </>
+    </main>
   )
 }
 

@@ -22,7 +22,7 @@ export const Updates = () => {
   }
 
   return (
-    <section>
+    <section className="Updates">
       <h2 className="title">UPDATES</h2>
       <div className="update-article-grid">
         {updates.map((update, index) => {

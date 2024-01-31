@@ -1,6 +1,10 @@
 $primary-color: #48487f;
-$break-point: 600px;
+$break-point: 768px;
 $space: 20px;
+
+* {
+  box-sizing: border-box;
+}
 
 button {
   all: unset;

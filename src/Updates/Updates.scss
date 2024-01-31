@@ -9,9 +9,12 @@
   box-sizing: border-box;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* More readable */
+  grid-template-columns: repeat(2, 1fr);
   gap: $space;
   padding: $space;
+  @media (max-width: $break-point) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .update-article {
@@ -20,37 +23,37 @@
   height: 50vh;
   max-height: 500px;
   border: 1px solid lightgray;
-  overflow: hidden; /* If you want ellipsis, make sure text is single line */
+  overflow: hidden;
   border-radius: 10px;
   box-shadow: 5px 5px 5px grey;
   padding: $space;
+  cursor: pointer;
   .more-indicator {
     position: absolute;
     font-weight: 600;
-    bottom: 0px; /* Position it near the bottom */
-    right: 10px; /* Position it to the right */
+    bottom: 0px;
+    right: 10px;
     padding: 5px;
     border-radius: 5px;
-    cursor: pointer; /* Change cursor to indicate interactivity */
     z-index: 1;
+  }
+  p {
+    text-indent: $space;
   }
 }
 
+// create fade at bottom of article
 .update-article::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px; /* Height of the fade effect */
+  height: 60px;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0.75),
     rgb(255, 255, 255, 1)
   );
-}
-
-.update-article__paragraph {
-  text-indent: 20px; /* Apply to paragraph inside UpdateArticle */
 }
