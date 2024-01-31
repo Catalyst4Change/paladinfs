@@ -1,5 +1,6 @@
 $primary-color: #48487f;
 $break-point: 600px;
+$space: 20px;
 
 button {
   all: unset;
@@ -8,4 +9,11 @@ button {
   color: #fff;
   padding: 3% 10%;
   margin: 4%;
+}
+
+.divider {
+  width: 10%;
+  height: 2px;
+  background-color: $primary-color;
+  margin: auto;
 }

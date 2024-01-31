@@ -1,20 +1,23 @@
-import { Hero } from "./Hero/Hero"
-import "./App.scss"
 import { Header } from "./Header/Header"
+import { Hero } from "./Hero/Hero"
+import { Updates } from "./Updates/Updates"
+import "./App.scss"
 
 function App() {
   return (
     <>
       <Header />
       <Hero />
+      <div className="divider"></div>
+      <Updates />
     </>
   )
 }
 
 export default App
-// header bar
-// hero
+
+// updates
 // testimonials
 // about us
 // gallery
-// map n hours
+// contact n map
