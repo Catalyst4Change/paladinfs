@@ -5,7 +5,7 @@
   color: $primary-color;
 }
 
-.update-article-grid {
+.article-grid {
   box-sizing: border-box;
   width: 100%;
   display: grid;
@@ -17,7 +17,7 @@
   }
 }
 
-.update-article {
+.article-container {
   box-sizing: border-box;
   position: relative;
   height: 50vh;
@@ -26,7 +26,7 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 5px 5px 5px grey;
-  padding: $space;
+  padding: 0 $space;
   cursor: pointer;
   .more-indicator {
     position: absolute;
@@ -43,7 +43,7 @@
 }
 
 // create fade at bottom of article
-.update-article::after {
+.article-container::after {
   content: "";
   position: absolute;
   bottom: 0;
