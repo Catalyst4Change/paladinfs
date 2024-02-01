@@ -1,27 +1,30 @@
 @import "../../App.scss";
 
 .header {
-  padding: 0 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 70px;
   background-color: white;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
+  position: -webkit-fixed;
   top: 0;
   white-space: nowrap;
   color: $primary-color;
-  z-index: 1;
 
   .header-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
+    height: 40px;
     min-width: 0;
+    background-color: lime;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+
+    padding: 0 10px;
+    z-index: 1;
 
     .hamburger {
       margin-right: 5px;
@@ -69,23 +72,22 @@
 .sliding-menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: absolute;
   width: 300px;
-  height: 100%;
-  top: 70px;
+  height: 100vh;
+  top: 40px;
   left: -300px;
   transition: 0.25s ease-in-out;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
 
   p {
     color: $primary-color;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 1.4em;
-    width: 50%;
   }
   &.active {
     left: 0px;

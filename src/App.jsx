@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import React from "react"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import React, { useEffect } from "react"
 import { Home } from "./Home/Home"
 
 import { Services } from "./Services/Services"
@@ -18,38 +18,45 @@ import { AboutUs } from "./AboutUs/AboutUs"
 import "./App.scss"
 
 export const App = () => {
+  const pathName = useLocation()
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+    })
+  }
+
+  useEffect(() => {
+    goToTop()
+  }, [pathName])
+
   return (
     <main className="App">
-      <BrowserRouter>
-        <Routes>
-          {/* home */}
-          <Route path="/" element={<Home />} />
-          {/* services */}
-          <Route path="/services/*" element={<Services />} />{" "}
-          <Route
-            path="/services/estateservices/*"
-            element={<EstateServices />}
-          />
-          <Route
-            path="/services/financialservices/*"
-            element={<FinancialServices />}
-          />
-          <Route
-            path="/services/medicalcoordination/*"
-            element={<MedicalCoordination />}
-          />
-          <Route path="/services/benefits/*" element={<Benefits />} />
-          {/* resources */}
-          <Route path="/resources/*" element={<Resources />} />
-          <Route path="/resources/blog/*" element={<Blog />} />
-          <Route path="/resources/documents/*" element={<Documents />} />
-          <Route path="/resources/downloads/*" element={<Downloads />} />
-          <Route path="/resources/videos/*" element={<Videos />} />
-          <Route path="/resources/documentprep/*" element={<Documents />} />
-          {/* about us */}
-          <Route path="/aboutus/*" element={<AboutUs />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        {/* home */}
+        <Route path="/" element={<Home />} />
+        {/* services */}
+        <Route path="/services/*" element={<Services />} />
+        <Route path="/services/estateservices/*" element={<EstateServices />} />
+        <Route
+          path="/services/financialservices/*"
+          element={<FinancialServices />}
+        />
+        <Route
+          path="/services/medicalcoordination/*"
+          element={<MedicalCoordination />}
+        />
+        <Route path="/services/benefits/*" element={<Benefits />} />
+        {/* resources */}
+        <Route path="/resources/*" element={<Resources />} />
+        <Route path="/resources/blog/*" element={<Blog />} />
+        <Route path="/resources/documents/*" element={<Documents />} />
+        <Route path="/resources/downloads/*" element={<Downloads />} />
+        <Route path="/resources/videos/*" element={<Videos />} />
+        <Route path="/resources/documentprep/*" element={<Documents />} />
+        {/* about us */}
+        <Route path="/aboutus/*" element={<AboutUs />} />
+      </Routes>
     </main>
   )
 }
