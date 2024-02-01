@@ -5,7 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50%;
+
   .hero-text {
     display: flex;
     flex-direction: column;
@@ -32,6 +33,7 @@
     align-items: center;
     justify-content: center;
     object-fit: contain;
+    margin: 5%;
     .hero-image {
       width: 100%;
     }

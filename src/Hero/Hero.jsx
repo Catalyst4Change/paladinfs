@@ -60,7 +60,7 @@ export const Hero = () => {
       </section>
       <section className="hero-text">
         {/* <h2 className="hero-title">Paladin Fiduciary Services LLC</h2> */}
-        <span>Fiduciaries Serving Northern California</span>
+        <span>Serving Northern California</span>
         <span>{displayClosingTime()}</span>
         {/* <button>Get Quote</button> */}
       </section>
