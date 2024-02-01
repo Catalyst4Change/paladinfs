@@ -1,8 +1,9 @@
 @import "../../App.scss";
 .footer {
-  border-top: 2px $primary-color solid;
+  width: 100%;
+  border-top: 2px solid $primary-color; /* Assuming $primary-color is defined */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 25px;
+  height: 25px; /* Set your desired footer height */
 }

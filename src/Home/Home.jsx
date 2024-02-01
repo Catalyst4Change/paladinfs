@@ -7,14 +7,14 @@ export const Home = () => {
   return (
     <main className="home">
       <Hero />
-      <Link to="/fiduciaryservices">
+      <Link to="/services">
         <h2>Fiduciary Services</h2>
       </Link>
       <Link to="resources">
         <h2>Resources</h2>
       </Link>
-      <Link to="about">
-        <h2>About</h2>
+      <Link to="aboutus">
+        <h2>About Us</h2>
       </Link>
     </main>
   )

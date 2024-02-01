@@ -3,6 +3,7 @@ import quote from "../../assets/quote.png"
 import phone from "../../assets/phone.png"
 import directions from "../../assets/directions.png"
 import "./Header.scss"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -64,6 +65,7 @@ export const Header = () => {
           </div>
           <h1 className="header-title">Paladin Fiduciary Services LLC</h1>
         </section>
+
         <section tabIndex={2} className="header-item">
           <div className="icon-container">
             <img src={quote} alt="list icon" />
