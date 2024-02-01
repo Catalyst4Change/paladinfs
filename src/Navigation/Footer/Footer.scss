@@ -1,0 +1,8 @@
+@import "../../App.scss";
+.footer {
+  border-top: 2px $primary-color solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 25px;
+}

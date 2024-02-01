@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import hero from "../assets/hero.jpg"
+import logo from "../assets/logo-master.jpg"
 import "./Hero.scss"
 
 export const Hero = () => {
@@ -50,18 +51,18 @@ export const Hero = () => {
 
   return (
     <main className="hero">
-      <section className="hero-text">
-        <h2 className="hero-title">Paladin Fiduciary Services LLC</h2>
-        <span>Fiduciaries Serving Northern California</span>
-        <span>{displayClosingTime()}</span>
-        <button>Get Quote</button>
-      </section>
       <section className="hero-image-container">
         <img
           className="hero-image"
-          src={hero}
-          alt="Our founder, Janice W. Paladin"
+          src={logo}
+          alt="Paladin Fiduciary Services Lion Logo"
         />
+      </section>
+      <section className="hero-text">
+        {/* <h2 className="hero-title">Paladin Fiduciary Services LLC</h2> */}
+        <span>Fiduciaries Serving Northern California</span>
+        <span>{displayClosingTime()}</span>
+        {/* <button>Get Quote</button> */}
       </section>
     </main>
   )

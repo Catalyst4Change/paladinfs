@@ -1,9 +1,9 @@
-import { Header } from "./Header/Header"
-import { Hero } from "./Hero/Hero"
-import { ArticleGrid } from "./ArticleGrid/ArticleGrid"
-import { AboutUs } from "./AboutUs/AboutUs"
-import "./App.scss"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Header } from "./Navigation/Header/Header"
 import { useState } from "react"
+import { Home } from "./Home/Home"
+import "./App.scss"
+import { Footer } from "./Navigation/Footer/Footer"
 
 function App() {
   const [updates] = useState([
@@ -21,12 +21,12 @@ function App() {
   return (
     <main className="App">
       <Header />
-      <Hero />
-      <div className="divider"></div>
-      <ArticleGrid title={"What's A Fiduciary?"} articles={updates} />
-      <div className="divider"></div>
-      <ArticleGrid title={"Testimonials"} articles={testimonials} />
-      <AboutUs />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </main>
   )
 }

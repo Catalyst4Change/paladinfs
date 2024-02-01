@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
+import quote from "../../assets/quote.png"
+import phone from "../../assets/phone.png"
+import directions from "../../assets/directions.png"
 import "./Header.scss"
-import quote from "../assets/quote.png"
-import phone from "../assets/phone.png"
-import directions from "../assets/directions.png"
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -128,3 +128,4 @@ export const Header = () => {
     </header>
   )
 }
+// refactor with nav >  ul > li
