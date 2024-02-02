@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import hero from "../assets/hero.jpg"
 import logo from "../assets/logo-master.jpg"
 import "./Hero.scss"
 
@@ -39,7 +38,7 @@ export const Hero = () => {
 
     const todayHours = businessHours[dayName]
     if (!todayHours || todayHours.close === "Closed") {
-      return "Closed"
+      return "Currently Closed"
     }
     const closingTime = new Date(today.toDateString() + " " + todayHours.close)
     if (today > closingTime) {
