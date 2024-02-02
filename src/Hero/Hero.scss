@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
 
   .hero-text {
     display: flex;
@@ -28,22 +28,23 @@
   }
 
   .hero-image-container {
-    width: 75%;
+    width: clamp(25%, 50%, 200px);
     display: flex;
     align-items: center;
     justify-content: center;
     object-fit: contain;
-    margin: 5%;
+    margin: 10px;
     .hero-image {
       width: 100%;
     }
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   /* Adjust breakpoint as needed */
   .hero {
     .hero-image-container {
+      width: 50%;
     }
   }
 }
