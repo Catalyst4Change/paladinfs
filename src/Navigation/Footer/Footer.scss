@@ -1,10 +1,17 @@
 @import "../../App.scss";
 .footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
   width: 100%;
   background-color: white;
-  border-top: 2px solid $primary-color;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 25px;
+  min-height: 25px;
+  p {
+    margin: 10px;
+  }
 }

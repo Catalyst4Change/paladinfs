@@ -16,6 +16,7 @@ import { Documents } from "./Resources/Documents/Documents"
 
 import { AboutUs } from "./AboutUs/AboutUs"
 import "./App.scss"
+import { Error } from "./Error/Error"
 
 export const App = () => {
   const pathName = useLocation()
@@ -33,6 +34,8 @@ export const App = () => {
   return (
     <main className="App">
       <Routes>
+        {/* error */}
+        <Route path="*" element={<Error />} />
         {/* home */}
         <Route path="/" element={<Home />} />
         {/* services */}

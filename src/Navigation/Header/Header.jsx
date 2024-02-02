@@ -13,7 +13,6 @@ export const Header = () => {
     const focusOnBurger = () => {
       document.querySelector(".hamburger").focus()
     }
-    console.log(event.key)
     if (
       (!menuOpen && event.key === "Enter") ||
       (!menuOpen && event.key === " ")
@@ -30,14 +29,28 @@ export const Header = () => {
     }
   }
 
-  // add escape anywhere to close menu
-
   useEffect(() => {
-    if (menuOpen) {
+    const handleOutsideClick = (event) => {
       const menu = document.querySelector(".sliding-menu")
-      const firstLink = menu.querySelector("a")
-      firstLink.focus()
+      const hamburger = document.querySelector(".hamburger")
+      // Check if the click is outside the menu and hamburger icon
+      if (
+        menuOpen &&
+        menu &&
+        !menu.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+        setMenuOpen(false)
+      }
     }
+
+    // Only add the event listener when the menu is open
+    if (menuOpen) {
+      document.addEventListener("click", handleOutsideClick)
+    }
+
+    // Clean up the event listener when the component unmounts or the menu closes
+    return () => document.removeEventListener("click", handleOutsideClick)
   }, [menuOpen])
 
   return (

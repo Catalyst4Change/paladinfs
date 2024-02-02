@@ -4,12 +4,14 @@ import "./Footer.scss"
 export const Footer = () => {
   return (
     <main className="footer">
-      <span>Copyright 2024 Catalyst</span>
-      <span>Privacy Policy</span>
-      <span>Sitemap</span>
-      <span>Contact Us</span>
-      <span>Social Media</span>
-      <span>Email</span>
+      <p>Copyright 2024 Catalyst</p>
+      <p>Privacy Policy</p>
+      <p>Sitemap</p>
+      <p>Contact Us</p>
+      <p>Social Media</p>
+      <a href="mailto:paladinfiduciary@gmail.com">
+        <p>Email</p>
+      </a>
     </main>
   )
 }
