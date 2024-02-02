@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [navItems, setNavItems] = useState([
-    { name: "Fiduciary Services", link: "/services" },
+    { name: "Services", link: "/services" },
     { name: "Resources", link: "/resources" },
     { name: "About Us", link: "/aboutus" },
   ])
@@ -67,16 +67,21 @@ export const Header = () => {
   // Adjust nav items based on available width
   const adjustNavItems = useCallback(() => {
     const navWidth = navContainerRef.current.offsetWidth
-    const hamburgerWidth = document.querySelector(".hamburger").offsetWidth
+    const hamburgerWidth = document.querySelector(".hamburger")
+      ? document.querySelector(".hamburger").offset
+      : 0
     const titleWidth = document.querySelector(".header-title").offsetWidth
     const unUsableNavWidth = hamburgerWidth + titleWidth
 
-    let totalNavItemsWidth = navItems.reduce((total, item) => {
-      const itemIndex = navItems.indexOf(item)
-      const child = navRef.current.children[itemIndex]
-      return total + (child ? child.offsetWidth + 20 : 0)
-    }, 0)
+    let totalNavItemsWidth = 0
 
+    if (navRef.current && navRef.current.children.length > 0) {
+      totalNavItemsWidth = navItems.reduce((total, item) => {
+        const itemIndex = navItems.indexOf(item)
+        const child = navRef.current.children[itemIndex]
+        return total + (child ? child.offsetWidth + 25 : 0)
+      }, 0)
+    }
     let updatedNavItems = [...navItems]
     let updatedMenuItems = [...menuItems]
 
@@ -122,7 +127,7 @@ export const Header = () => {
     <header className="header" ref={navContainerRef}>
       {/* header bar */}
       <nav className="header-menu">
-        {navItems.length > 0 && (
+        {menuItems.length > 0 && (
           <div
             tabIndex={1}
             className="hamburger"
@@ -143,7 +148,7 @@ export const Header = () => {
         )}
 
         <Link to="/">
-          <span className="header-title">Paladin Fiduciary Services</span>
+          <span className="header-title">Paladin Fiduciary</span>
         </Link>
         <div className="nav-items" ref={navRef}>
           {navItems.map((item, index) => (
