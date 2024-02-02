@@ -161,7 +161,6 @@ export const Header = () => {
       {/* sliding menu contains hidden items */}
       <div className={`sliding-menu ${menuOpen ? "active" : ""}`}>
         <nav>
-          <span>sliding menu</span>
           <ul>
             {menuItems.map((item, index) => (
               <li key={index}>

@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <main className="home">
       <Hero />
-      <Link to="/services">
+      {/* <Link to="/services">
         <h2>Fiduciary Services</h2>
       </Link>
       <Link to="resources">
@@ -15,7 +15,7 @@ export const Home = () => {
       </Link>
       <Link to="aboutus">
         <h2>About Us</h2>
-      </Link>
+      </Link> */}
     </main>
   )
 }

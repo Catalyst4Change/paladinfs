@@ -1,5 +1,12 @@
 @import "../../App.scss";
 
+a {
+  text-decoration: none;
+  color: $primary-color;
+  :link {
+  }
+}
+
 .header {
   box-sizing: border-box;
   display: flex;
@@ -24,30 +31,32 @@
 
     .hamburger {
       cursor: pointer;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
       .hamburger-slice {
         width: 30px;
         height: 3px;
         background-color: $primary-color;
-        margin: 5px;
         transition: 0.25s ease-in-out;
       }
       .line-1.active {
-        transform: rotate(45deg) translate(5px, 6px);
+        transform: rotate(45deg) translate(6px, 6px);
       }
       .line-2.active {
         opacity: 0;
       }
       .line-3.active {
-        transform: rotate(-45deg) translate(5px, -6px);
+        transform: rotate(-45deg) translate(6px, -6px);
       }
     }
     .header-title {
       flex-shrink: 0;
       color: $primary-color;
-      font-family: "Libre Baskerville", serif;
       overflow: hidden;
       margin-left: 10px;
-      margin-right: auto;
     }
     .nav-items {
       display: flex;
@@ -55,25 +64,10 @@
       display: flex;
       justify-content: flex-start;
       overflow: hidden;
-
       a {
         flex-shrink: 0;
-        margin: 0 10px;
+        margin-left: 10px;
         white-space: nowrap;
-      }
-    }
-  }
-  .header-item {
-    margin: 0 5px;
-    display: flex;
-    align-items: center;
-    .icon-container {
-      width: 25px;
-      height: 25px;
-      margin: 5px;
-      img {
-        height: 100%;
-        width: 100%;
       }
     }
   }
@@ -91,12 +85,12 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: -1;
-  padding: 25px;
+  padding-right: 30px;
   a {
     color: $primary-color;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-    font-size: 1.4em;
+    text-decoration: none;
   }
   &.active {
     left: 0px;
