@@ -7,7 +7,6 @@ export const EstateServices = () => {
   return (
     <main className="EstateServices">
       <h1>EstateServices</h1>
-
       <Article
         title="Maybe you need to name a Fiduciary instead of your child."
         image={leashkid}

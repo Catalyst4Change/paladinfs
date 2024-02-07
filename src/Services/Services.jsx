@@ -7,13 +7,13 @@ export const Services = () => {
   return (
     <main className="Services">
       <Link to="/services/estateservices">
-        <h2>EstateServices</h2>
+        <h2>Estate Services</h2>
       </Link>
       <Link to="/services/financialservices">
-        <h2>FinancialServices</h2>
+        <h2>Financial Services</h2>
       </Link>
       <Link to="/services/medicalcoordination">
-        <h2>MedicalCoordination</h2>
+        <h2>Medical Coordination</h2>
       </Link>
       <Link to="/services/benefits">
         <h2>Benefits</h2>

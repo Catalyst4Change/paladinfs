@@ -14,7 +14,7 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
     setMaxHeight(currentHeight)
 
     // Determine if the "Read More" button should be shown
-    const isContentOverflowing = articleRef.current.scrollHeight > 500
+    const isContentOverflowing = articleRef.current.scrollHeight > 350
     setShowToggleButton(isContentOverflowing)
   }, [isActive, content]) // Re-run when isActive or content changes
 
@@ -44,7 +44,7 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
   return (
     <article ref={articleRef} style={articleStyle} className="article">
       {postDate ? <span>Posted on {postDate}</span> : null}
-      {title ? <h3 className="title">{title}</h3> : null}
+      {title ? <h2 className="title">{title}</h2> : null}
       {image ? (
         <div className="image-container" style={imageContainerStyle}>
           <img src={image} alt={imgAlt} />
