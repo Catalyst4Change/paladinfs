@@ -64,65 +64,6 @@ export const Header = () => {
     return () => document.removeEventListener("click", handleOutsideClick)
   }, [menuOpen])
 
-  // Adjust nav items based on available width
-  const adjustNavItems = useCallback(() => {
-    const navWidth = navContainerRef.current.offsetWidth
-    const hamburgerWidth = document.querySelector(".hamburger")
-      ? document.querySelector(".hamburger").offset
-      : 0
-    const titleWidth = document.querySelector(".header-title").offsetWidth
-    const unUsableNavWidth = hamburgerWidth + titleWidth
-
-    let totalNavItemsWidth = 0
-
-    if (navRef.current && navRef.current.children.length > 0) {
-      totalNavItemsWidth = navItems.reduce((total, item) => {
-        const itemIndex = navItems.indexOf(item)
-        const child = navRef.current.children[itemIndex]
-        return total + (child ? child.offsetWidth + 25 : 0)
-      }, 0)
-    }
-    let updatedNavItems = [...navItems]
-    let updatedMenuItems = [...menuItems]
-
-    while (
-      navWidth - unUsableNavWidth < totalNavItemsWidth &&
-      updatedNavItems.length > 0
-    ) {
-      // Assume the last item is the one to move
-      const itemToMove = updatedNavItems[updatedNavItems.length - 1]
-      const itemWidth =
-        navRef.current.children[updatedNavItems.length - 1].offsetWidth
-      totalNavItemsWidth -= itemWidth
-      updatedNavItems.pop() // Remove the item from the end of the array
-      updatedMenuItems.unshift(itemToMove) // Add it to the start of the menu items array
-    }
-
-    // Check if we need to update the state
-    if (navItems.length !== updatedNavItems.length) {
-      setNavItems(updatedNavItems)
-      setMenuItems(updatedMenuItems)
-    }
-  }, [navItems, menuItems, navRef])
-
-  // Run adjustNavItems on resize
-  useEffect(() => {
-    const handleResize = () => {
-      adjustNavItems()
-    }
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize)
-
-    // Call adjustNavItems on mount to set the initial state
-    adjustNavItems()
-
-    // Cleanup event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [adjustNavItems])
-
   return (
     <header className="header" ref={navContainerRef}>
       {/* header bar */}

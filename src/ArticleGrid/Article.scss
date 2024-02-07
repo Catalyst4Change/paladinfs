@@ -1,0 +1,49 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
+  padding: 0 20px 40px 20px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    transition: all 0.5s ease-in-out;
+  }
+  .image-container {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .more-indicator {
+    position: absolute;
+    font-weight: 600;
+    bottom: 0px;
+    right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+}
+
+// create fade at bottom of article
+.article::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgb(255, 255, 255, 1)
+  );
+}

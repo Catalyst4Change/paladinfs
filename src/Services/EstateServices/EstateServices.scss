@@ -5,4 +5,11 @@
   align-items: center;
   justify-content: space-around;
   text-justify: center;
+  padding: 0 10%;
+  .image-container {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
 }
