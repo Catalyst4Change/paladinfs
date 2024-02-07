@@ -3,46 +3,59 @@ import "./Article.scss"
 
 export const Article = ({ postDate, title, image, imgAlt, content }) => {
   const [isActive, setIsActive] = useState(false)
-  // State to hold the calculated height
-  const [maxHeight, setMaxHeight] = useState("500px") // Assuming 500px is the collapsed height
+  const [showToggleButton, setShowToggleButton] = useState(false) // State to control button visibility
   const articleRef = useRef(null)
 
   useEffect(() => {
-    if (isActive) {
-      // When active, set maxHeight to the scrollHeight (actual height of the content)
-      const currentHeight = `${articleRef.current.scrollHeight}px`
-      setMaxHeight(currentHeight)
-    } else {
-      // When not active, reset to collapsed height
-      setMaxHeight("500px")
-    }
-  }, [isActive]) // This effect runs when isActive changes
+    // Adjust maxHeight based on isActive
+    const currentHeight = isActive
+      ? `${articleRef.current.scrollHeight}px`
+      : "350px"
+    setMaxHeight(currentHeight)
+
+    // Determine if the "Read More" button should be shown
+    const isContentOverflowing = articleRef.current.scrollHeight > 500
+    setShowToggleButton(isContentOverflowing)
+  }, [isActive, content]) // Re-run when isActive or content changes
+
+  const [maxHeight, setMaxHeight] = useState("500px") // Assuming 500px is the collapsed height
 
   const toggleArticle = () => {
     setIsActive(!isActive)
   }
 
-  const customStyle = {
+  const articleStyle = {
     maxHeight: maxHeight,
     overflow: "hidden",
     transition: "max-height 0.5s ease",
   }
 
+  const imageContainerStyle = {
+    width: isActive ? "100%" : "50%", // Adjust container width based on isActive
+    margin: "0 auto", // Center the container when image is smaller
+  }
+
+  const splitParagraphs = () => {
+    return content
+      .split("\n\n")
+      .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+  }
+
   return (
-    <article ref={articleRef} style={customStyle} className="article">
+    <article ref={articleRef} style={articleStyle} className="article">
       {postDate ? <span>Posted on {postDate}</span> : null}
-      {title ? <h3>{title}</h3> : null}
+      {title ? <h3 className="title">{title}</h3> : null}
       {image ? (
-        <div className="image-container">
+        <div className="image-container" style={imageContainerStyle}>
           <img src={image} alt={imgAlt} />
         </div>
       ) : null}
-      {content.split("\n\n").map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
-      ))}
-      <div onClick={toggleArticle} className="more-indicator">
-        {isActive ? "Close" : "Read More"}
-      </div>
+      {splitParagraphs()}
+      {showToggleButton && (
+        <button onClick={toggleArticle} className="toggle-button">
+          {isActive ? "Close" : "Read More"}
+        </button>
+      )}
     </article>
   )
 }
