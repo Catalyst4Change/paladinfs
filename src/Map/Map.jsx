@@ -1,4 +1,5 @@
 import React from "react"
+import "./Map.scss"
 
 export const Map = () => {
   const location = "38.44120407104492,-122.6060791015625"
@@ -8,8 +9,7 @@ export const Map = () => {
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${location}`
 
   return (
-    <div style={{ height: "400px", width: "90%", margin: "20px" }}>
-      p
+    <div style={{ height: "50vh", width: "100%", margin: "20px" }}>
       <iframe
         title="My location"
         width="100%"

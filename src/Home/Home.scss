@@ -1,0 +1,51 @@
+@import "../App.scss";
+
+.call-now {
+  font-size: 1.5em;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+  background-color: $secondary-color;
+  color: primary-color;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.business-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  .contact {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .location-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .business-hours {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .business-hours-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      .date {
+        text-align: left;
+      }
+      .time {
+        text-align: right;
+      }
+    }
+  }
+}
