@@ -63,3 +63,5 @@ export const App = () => {
     </main>
   )
 }
+// email LB
+// steal info from front page
