@@ -3,15 +3,20 @@ import "./Footer.scss"
 
 export const Footer = () => {
   return (
-    <main className="footer">
-      <span>Copyright 2024 Catalyst</span>
-      <span>Privacy Policy</span>
+    <section className="footer">
+      <span>© Copyright 2024</span>
+      <span>
+        Website by <a href="mailto:email@catalyst.sex">Catalyst</a>
+      </span>
+      {/* <span>Privacy Policy</span>
       <span>Sitemap</span>
-      <span>Contact Us</span>
-      <span>Social Media</span>
+      <span>Contact Us</span> */}
+      <a href="https://www.linkedin.com/company/paladinfinancial">
+        <span>LinkedIn</span>
+      </a>
       <a href="mailto:paladinfiduciary@gmail.com">
         <span>Email</span>
       </a>
-    </main>
+    </section>
   )
 }

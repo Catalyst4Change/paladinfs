@@ -95,29 +95,29 @@ export const Header = () => {
 
   return (
     <header className="header">
-      {hamburgerVisible && (
-        <div
-          tabIndex={1}
-          className="hamburger"
-          onClick={toggleMenu}
-          onKeyDown={handleKeyDown}
-        >
-          {/* hamburger slices */}
-          <div
-            className={`hamburger-slice line-1 ${menuOpen ? "active" : ""}`}
-          ></div>
-          <div
-            className={`hamburger-slice line-2 ${menuOpen ? "active" : ""}`}
-          ></div>
-          <div
-            className={`hamburger-slice line-3 ${menuOpen ? "active" : ""}`}
-          ></div>
-        </div>
-      )}
       <nav className="header-menu">
-        <Link to="/">
-          <img className="lion-icon" src={lionIcon} alt="" />
-          <span className="header-title">Paladin Fiduciary</span>
+        {hamburgerVisible && (
+          <div
+            tabIndex={1}
+            className="hamburger"
+            onClick={toggleMenu}
+            onKeyDown={handleKeyDown}
+          >
+            {/* hamburger slices */}
+            <div
+              className={`hamburger-slice line-1 ${menuOpen ? "active" : ""}`}
+            ></div>
+            <div
+              className={`hamburger-slice line-2 ${menuOpen ? "active" : ""}`}
+            ></div>
+            <div
+              className={`hamburger-slice line-3 ${menuOpen ? "active" : ""}`}
+            ></div>
+          </div>
+        )}
+        <Link className="title-logo" to="/">
+          <img className="lion-icon" src={lionIcon} alt="lion icon" />
+          <span className="header-title"> Paladin Fiduciary</span>
         </Link>
         {navItems.map((item, index) => (
           <Link key={index} to={item.link}>

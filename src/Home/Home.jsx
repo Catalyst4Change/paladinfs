@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <main className="home">
       <Hero />
-      <section>
+      <section className="content">
         <h4>
           Worried who will carry out your wishes after you are gone? <br />
           Lost at the beginning of your estate planning journey and need a
@@ -33,9 +33,10 @@ export const Home = () => {
       <Map />
       <section className="business-info">
         <div className="contact">
-          <h4>Contact:</h4> <p>(707) 582-3181</p>
+          <h4>Contact:</h4>
+          <span>(707) 582-3181</span>
           <a href="tel:+17075823181">
-            <button className="call-now">Call Now</button>
+            <button className="call-now-button">Call Now</button>
           </a>
         </div>
         <div className="location-info">

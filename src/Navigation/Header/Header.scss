@@ -13,64 +13,71 @@ a {
 
 .header {
   display: flex;
+  flex-direction: row;
   width: 100%;
   position: sticky;
   position: -webkit-fixed;
   top: 0;
   color: $primary-color;
   z-index: 10;
+  background-color: $secondary-color;
 
   .header-menu {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
     align-items: center;
     justify-content: space-around;
     width: 100vw;
     height: 40px;
     min-width: 0;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-    background-color: white;
+    padding: 0 10px;
 
-    .header-title {
-      flex-shrink: 0;
-      color: $primary-color;
-      overflow: hidden;
-      margin-left: 10px;
-      font-weight: 600;
-      font-size: 2em;
-      font-family: "leo";
-      text-transform: lowercase;
+    .hamburger {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+      cursor: pointer;
+
+      .hamburger-slice {
+        width: 30px;
+        height: 3px;
+        background-color: $primary-color;
+        transition: 0.25s ease-in-out;
+      }
+      .line-1.active {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      .line-2.active {
+        opacity: 0;
+      }
+      .line-3.active {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+    .title-logo {
+      .lion-icon {
+        height: 25px;
+        width: auto;
+        margin: 0;
+      }
+      .header-title {
+        flex-shrink: 0;
+        color: $primary-color;
+        overflow: hidden;
+        font-weight: 600;
+        font-size: 2em;
+        font-family: "leo";
+        text-transform: lowercase;
+      }
     }
     .nav-item {
       font-size: 1.5em;
     }
-  }
-}
-
-.hamburger {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
-  .hamburger-slice {
-    width: 30px;
-    height: 3px;
-    background-color: $primary-color;
-    transition: 0.25s ease-in-out;
-  }
-  .line-1.active {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-  .line-2.active {
-    opacity: 0;
-  }
-  .line-3.active {
-    transform: rotate(-45deg) translate(6px, -6px);
   }
 }
 
@@ -98,9 +105,4 @@ a {
     top: 40px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   }
-}
-.lion-icon {
-  height: 25px;
-  width: auto;
-  margin: 0;
 }

@@ -5,10 +5,8 @@ $space: 20px;
 
 .App {
   flex: 1;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   background-color: white;
-  padding-bottom: 20px;
 }
 
 main {
@@ -18,5 +16,9 @@ main {
   align-items: center;
   justify-content: flex-start;
   text-justify: center;
-  padding: 0 10px;
+  padding: 0 10px 20px 10px;
+}
+
+.content {
+  width: 80%;
 }
