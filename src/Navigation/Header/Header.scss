@@ -14,7 +14,6 @@ a {
 .header {
   display: flex;
   width: 100%;
-  background-color: white;
   position: sticky;
   position: -webkit-fixed;
   top: 0;
@@ -31,32 +30,8 @@ a {
     height: 40px;
     min-width: 0;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
 
-    .hamburger {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 20px;
-      .hamburger-slice {
-        width: 30px;
-        height: 3px;
-        background-color: $primary-color;
-        transition: 0.25s ease-in-out;
-      }
-      .line-1.active {
-        transform: rotate(45deg) translate(6px, 6px);
-      }
-      .line-2.active {
-        opacity: 0;
-      }
-      .line-3.active {
-        transform: rotate(-45deg) translate(6px, -6px);
-      }
-    }
     .header-title {
       flex-shrink: 0;
       color: $primary-color;
@@ -72,6 +47,33 @@ a {
     }
   }
 }
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  .hamburger-slice {
+    width: 30px;
+    height: 3px;
+    background-color: $primary-color;
+    transition: 0.25s ease-in-out;
+  }
+  .line-1.active {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .line-2.active {
+    opacity: 0;
+  }
+  .line-3.active {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
 .sliding-menu {
   display: flex;
   flex-direction: column;

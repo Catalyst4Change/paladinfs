@@ -95,26 +95,26 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <nav className="header-menu">
-        {hamburgerVisible && (
+      {hamburgerVisible && (
+        <div
+          tabIndex={1}
+          className="hamburger"
+          onClick={toggleMenu}
+          onKeyDown={handleKeyDown}
+        >
+          {/* hamburger slices */}
           <div
-            tabIndex={1}
-            className="hamburger"
-            onClick={toggleMenu}
-            onKeyDown={handleKeyDown}
-          >
-            {/* hamburger slices */}
-            <div
-              className={`hamburger-slice line-1 ${menuOpen ? "active" : ""}`}
-            ></div>
-            <div
-              className={`hamburger-slice line-2 ${menuOpen ? "active" : ""}`}
-            ></div>
-            <div
-              className={`hamburger-slice line-3 ${menuOpen ? "active" : ""}`}
-            ></div>
-          </div>
-        )}
+            className={`hamburger-slice line-1 ${menuOpen ? "active" : ""}`}
+          ></div>
+          <div
+            className={`hamburger-slice line-2 ${menuOpen ? "active" : ""}`}
+          ></div>
+          <div
+            className={`hamburger-slice line-3 ${menuOpen ? "active" : ""}`}
+          ></div>
+        </div>
+      )}
+      <nav className="header-menu">
         <Link to="/">
           <img className="lion-icon" src={lionIcon} alt="" />
           <span className="header-title">Paladin Fiduciary</span>
