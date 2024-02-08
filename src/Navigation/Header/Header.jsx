@@ -1,17 +1,46 @@
 import React, { useEffect, useRef, useState, useCallback } from "react"
+import lionIcon from "../../assets/lion-icon.svg"
 import "./Header.scss"
 import { Link } from "react-router-dom"
 
 export const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [navItems, setNavItems] = useState([
+  const [initialNavItems] = useState([
     { name: "Services", link: "/services" },
     { name: "Resources", link: "/resources" },
     { name: "About Us", link: "/aboutus" },
   ])
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [navItems, setNavItems] = useState([])
   const [menuItems, setMenuItems] = useState([])
-  const navRef = useRef()
-  const navContainerRef = useRef()
+  const [hamburgerVisible, setHamburgerVisible] = useState(false)
+  const windowWidth = () => {
+    return window.innerWidth
+  }
+
+  // Define your breakpoint
+  const breakpoint = 768 // pixels
+
+  const checkBreakpoint = () => {
+    if (windowWidth() >= breakpoint) {
+      setNavItems(initialNavItems)
+      setMenuItems([])
+      setHamburgerVisible(false)
+    } else {
+      setNavItems([])
+      setMenuItems(initialNavItems)
+      setHamburgerVisible(true)
+    }
+  }
+
+  useEffect(() => {
+    // Add event listener on window resize
+    window.addEventListener("resize", checkBreakpoint)
+    checkBreakpoint()
+    return () => {
+      // Add event listener on window resize
+      window.removeEventListener("resize", checkBreakpoint)
+    }
+  }, [navItems])
 
   // Open n close menu
   const toggleMenu = () => {
@@ -65,10 +94,9 @@ export const Header = () => {
   }, [menuOpen])
 
   return (
-    <header className="header" ref={navContainerRef}>
-      {/* header bar */}
+    <header className="header">
       <nav className="header-menu">
-        {menuItems.length > 0 && (
+        {hamburgerVisible && (
           <div
             tabIndex={1}
             className="hamburger"
@@ -87,30 +115,24 @@ export const Header = () => {
             ></div>
           </div>
         )}
-
         <Link to="/">
+          <img className="lion-icon" src={lionIcon} alt="" />
           <span className="header-title">Paladin Fiduciary</span>
         </Link>
-        <div className="nav-items" ref={navRef}>
-          {navItems.map((item, index) => (
-            <Link key={index} to={item.link}>
-              <span> {item.name}</span>
-            </Link>
-          ))}
-        </div>
+        {navItems.map((item, index) => (
+          <Link key={index} to={item.link}>
+            <span className="nav-item"> {item.name}</span>
+          </Link>
+        ))}
       </nav>
       {/* sliding menu contains hidden items */}
       <div className={`sliding-menu ${menuOpen ? "active" : ""}`}>
         <nav>
-          <ul>
-            {menuItems.map((item, index) => (
-              <li key={index}>
-                <Link to={item.link}>
-                  <h3 onClick={toggleMenu}>{item.name}</h3>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {menuItems.map((item, index) => (
+            <Link key={index} to={item.link}>
+              <h2 onClick={toggleMenu}>{item.name}</h2>
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
