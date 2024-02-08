@@ -5,6 +5,8 @@ $space: 20px;
 
 .App {
   flex: 1;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 main {
