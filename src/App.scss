@@ -3,6 +3,12 @@ $secondary-color: #e5cc00ff;
 $break-point: 768px;
 $space: 20px;
 
+@font-face {
+  font-family: leo;
+  src: local("LeoSemiRounded-Bold.ttf"),
+    url(./assets/fonts/LeoSemiRounded-Bold.ttf) format("truetype");
+}
+
 .App {
   flex: 1;
   -webkit-overflow-scrolling: touch;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react"
 import lionIcon from "../../assets/lion-icon.svg"
-import "./Header.scss"
 import { Link } from "react-router-dom"
+import "./Header.scss"
 
 export const Header = () => {
   const [initialNavItems] = useState([
@@ -13,12 +13,10 @@ export const Header = () => {
   const [navItems, setNavItems] = useState([])
   const [menuItems, setMenuItems] = useState([])
   const [hamburgerVisible, setHamburgerVisible] = useState(false)
+  const breakpoint = 768 // pixels
   const windowWidth = () => {
     return window.innerWidth
   }
-
-  // Define your breakpoint
-  const breakpoint = 768 // pixels
 
   const checkBreakpoint = () => {
     if (windowWidth() >= breakpoint) {
