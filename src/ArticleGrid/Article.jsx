@@ -46,7 +46,7 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
       {postDate ? <span>Posted on {postDate}</span> : null}
       {title ? <h2 className="title">{title}</h2> : null}
       {image ? (
-        <div className="image-container" style={imageContainerStyle}>
+        <div className="image-container">
           <img src={image} alt={imgAlt} />
         </div>
       ) : null}

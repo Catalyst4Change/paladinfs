@@ -1,7 +1,6 @@
 import React from "react"
 import { Article } from "../../ArticleGrid/Article"
 import leashkid from "../../assets/photos/leash-kid.jpg"
-import "./EstateServices.scss"
 
 export const EstateServices = () => {
   return (

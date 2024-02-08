@@ -1,18 +1,16 @@
 import React from "react"
-import { ArticleGrid } from "../ArticleGrid/ArticleGrid"
 import "./AboutUs.scss"
 
 export const AboutUs = () => {
   return (
     <main className="AboutUs">
-      <h2>About US</h2>
-      <h3>Our Philosophy:</h3>
-      <h4>Vision</h4>
-      <h4>Mission</h4>
-      <h4>Values</h4>
-      <h3>Our Team:</h3>
-      <ArticleGrid title="Our Team" articles={[]} />
-      <h3>Membership:</h3>
+      <h1>About Us</h1>
+      <h2>Our Philosophy:</h2>
+      <h3>Vision</h3>
+      <h3>Mission</h3>
+      <h3>Values</h3>
+      <h2>Our Team:</h2>
+      <h2>Membership:</h2>
     </main>
   )
 }

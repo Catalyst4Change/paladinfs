@@ -1,6 +1,4 @@
 import React from "react"
-
-import "./Services.scss"
 import { Link, Routes, Route } from "react-router-dom"
 
 export const Services = () => {
