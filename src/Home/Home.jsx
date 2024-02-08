@@ -1,6 +1,6 @@
 import React from "react"
 import { Hero } from "../Hero/Hero"
-import { Link } from "react-router-dom"
+import { Map } from "../Map"
 import "./Home.scss"
 
 export const Home = () => {
@@ -16,6 +16,7 @@ export const Home = () => {
       <Link to="aboutus">
         <h2>About Us</h2>
       </Link> */}
+      <Map />
     </main>
   )
 }

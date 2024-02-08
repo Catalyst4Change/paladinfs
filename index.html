@@ -2,11 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Paladin Fiduciary Services LLC</title>
   </head>
   <body>
+    <script>
+      function initMap() {
+        // // Define the coordinates for the center of the map
+        // var mapCenter = { lat: 38.44120407104492, lng: -122.6060791015625 }
+        // // Create a new map instance
+        // var map = new google.maps.Map(document.getElementById("map"), {
+        //   zoom: 14,
+        //   center: mapCenter,
+        //   mapId: "DEMO_MAP_ID", // Optional: Replace with your actual Map ID if you have a custom style
+        // })
+        // // Add a marker at the center of the map
+        // var marker = new google.maps.Marker({
+        //   position: mapCenter,
+        //   map: map,
+        //   title: "My Location", // Tooltip for the marker
+        // })
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxXNBDeSojMBDyo2yYSgz0ELTbPTNRRiU&callback=initMap"
+    ></script>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
