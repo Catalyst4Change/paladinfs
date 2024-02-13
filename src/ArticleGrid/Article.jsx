@@ -30,15 +30,27 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
     transition: "max-height 0.5s ease",
   }
 
-  const imageContainerStyle = {
-    width: isActive ? "100%" : "50%", // Adjust container width based on isActive
-    margin: "0 auto", // Center the container when image is smaller
-  }
-
-  const splitParagraphs = () => {
+  // Function to process content and return an array of JSX elements
+  const processContent = () => {
+    // Split the content into sections based on newline characters
     return content
-      .split("\n\n")
-      .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+      .split("\n")
+      .map((section, index) => {
+        // Trim whitespace from the section
+        const trimmedSection = section.trim()
+
+        // Check if the section is marked as a subtitle
+        if (trimmedSection.startsWith("#")) {
+          // It's a subtitle, so remove the "\t" and wrap the text in an <h3> tag
+          return <h3 key={`h3-${index}`}>{trimmedSection.substring(1)}</h3>
+        } else if (trimmedSection) {
+          // It's a regular paragraph, so wrap the text in a <p> tag
+          return <p key={`p-${index}`}>{section}</p>
+        }
+        // For empty lines or sections that become empty after trimming, return null to avoid rendering empty paragraphs
+        return null
+      })
+      .filter((element) => element !== null) // Filter out null values to avoid rendering them
   }
 
   return (
@@ -50,7 +62,7 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
           <img src={image} alt={imgAlt} />
         </div>
       ) : null}
-      {splitParagraphs()}
+      {processContent()}
       {showToggleButton && (
         <button onClick={toggleArticle} className="toggle-button">
           {isActive ? "Close" : "Read More"}

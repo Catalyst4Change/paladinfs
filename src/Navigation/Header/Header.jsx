@@ -38,7 +38,7 @@ export const Header = () => {
       // Add event listener on window resize
       window.removeEventListener("resize", checkBreakpoint)
     }
-  }, [navItems])
+  }, [])
 
   // Open n close menu
   const toggleMenu = () => {
