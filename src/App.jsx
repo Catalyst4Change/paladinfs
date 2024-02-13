@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import { Routes, Route, useLocation } from "react-router-dom"
 import React, { useEffect } from "react"
 import { Home } from "./Home/Home"
 
@@ -19,18 +19,10 @@ import "./App.scss"
 import { Error } from "./Error/Error"
 
 export const App = () => {
-  const pathName = useLocation()
-
-  const goToTop = () => {
-    window.scrollTo({
-      top: 0,
-    })
-  }
-
+  const { pathname } = useLocation()
   useEffect(() => {
-    goToTop()
-  }, [pathName])
-
+    window.scrollTo(0, 0)
+  }, [pathname])
   return (
     <main className="App">
       <Routes>
