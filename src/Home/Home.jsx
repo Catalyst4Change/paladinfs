@@ -3,6 +3,7 @@ import { Hero } from "../Hero/Hero"
 import { Map } from "../Map/Map"
 import "./Home.scss"
 import { Article } from "../ArticleGrid/Article"
+import { TestimonialsGrid } from "../TestimonialsGrid/TestimonialsGrid"
 
 export const Home = () => {
   return (
@@ -40,6 +41,7 @@ export const Home = () => {
         The terms private fiduciary and professional fiduciary are often used interchangeably, which can cause some confusion. However, a private fiduciary and professional fiduciary are the same thing. A private or professional fiduciary is a professional (often an attorney or CPA) who is privately hired by an individual or their family to serve in a fiduciary capacity, such as an executor, trustee, or agent under a power of attorney.\n\n
         True dedicated Professional fiduciaries are regulated by the Professional Fiduciaries Bureau, an entity within the Department of Consumer Affairs. In the State of California, a professional fiduciary must be licensed by the state, with exceptions for licensed attorneys and CPAs. Experienced professional fiduciaries have a much better understanding of estate laws than the typical family member or friend.`}
       />
+      <TestimonialsGrid />
       <Map />
       <section className="business-info">
         <div className="contact">

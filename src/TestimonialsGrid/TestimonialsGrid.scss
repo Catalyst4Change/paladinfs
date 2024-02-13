@@ -1,0 +1,10 @@
+.TestimonialsGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  > * {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
