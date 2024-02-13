@@ -32,7 +32,7 @@ export const Home = () => {
         </p>
       </section>
       <Article
-        title="What is a Private Federal Fiduciary?"
+        title="What is a Private Professional Fiduciary?"
         content={`Merriam-Webster defines fiduciary this way: “one that holds a fiduciary relation or acts in a fiduciary capacity.” Not all that helpful... \n\n
         For a word that’s been around since 1631, it sure has done a good job of escaping understanding.\n\n
         But by consulting another dictionary, one might finally understand what all the hype is about. Dictionary.com defines fiduciary this way: “a person to whom property or power is entrusted for the benefit of another.” That’s better.A Private Professional Fiduciary named in a private agreement or appointed by the court, is someone who assumes responsibility for someone else’s medical or financial affairs when they have become incapacitated or have died. \n\n
