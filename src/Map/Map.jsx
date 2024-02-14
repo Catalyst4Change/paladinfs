@@ -2,7 +2,7 @@ import React from "react"
 import "./Map.scss"
 
 export const Map = () => {
-  const location = "38.44120407104492,-122.6060791015625"
+  const location = "6570 Oakmont Drive, Suite #100B Santa Rosa, CA 95409"
   const apiKey = "AIzaSyAxXNBDeSojMBDyo2yYSgz0ELTbPTNRRiU"
 
   // Construct the Google Maps embed URL

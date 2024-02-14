@@ -49,7 +49,7 @@ export const Hero = () => {
   }
 
   return (
-    <main className="hero">
+    <div className="hero">
       <section className="hero-image-container">
         <img
           className="hero-image"
@@ -63,6 +63,6 @@ export const Hero = () => {
         <span>{displayClosingTime()}</span>
         {/* <button>Get Quote</button> */}
       </section>
-    </main>
+    </div>
   )
 }

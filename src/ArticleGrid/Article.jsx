@@ -59,7 +59,11 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
       {title ? <h2 className="title">{title}</h2> : null}
       {image ? (
         <div className="image-container">
-          <img src={image} alt={imgAlt} />
+          <img
+            className={`${isActive ? "active" : null}`}
+            src={image}
+            alt={imgAlt}
+          />
         </div>
       ) : null}
       {processContent()}

@@ -1,4 +1,6 @@
-.TestimonialsGrid {
+@import "../App.scss";
+
+.flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -7,4 +9,14 @@
     max-width: 250px;
     margin: 0 auto;
   }
+}
+.write-review-button {
+  font-size: 1.5em;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  background-color: white;
+  color: primary-color;
+  font-weight: 500;
+  margin-top: 20px;
+  box-shadow: 5px 5px 0 rgb($gold, 0.5);
 }
