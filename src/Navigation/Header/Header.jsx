@@ -2,11 +2,30 @@ import React, { useEffect, useRef, useState, useCallback } from "react"
 import lionIcon from "../../assets/lion-icon.svg"
 import { Link } from "react-router-dom"
 import "./Header.scss"
+import { DropDownMenu } from "./DropDownMenu/DropDownMenu"
 
 export const Header = () => {
   const [initialNavItems] = useState([
-    { name: "Services", link: "/services" },
-    { name: "Resources", link: "/resources" },
+    {
+      name: "Services",
+      link: "/services",
+      subLinks: [
+        { name: "Estate Services", link: "/services/estateservices" },
+        { name: "Financial Services", link: "/services/financialservices" },
+        { name: "Medical Coordination", link: "/services/medicalcoordination" },
+        { name: "Benefits", link: "/services/benefits" },
+      ],
+    },
+    {
+      name: "Resources",
+      link: "/resources",
+      subLinks: [
+        { name: "Blog", link: "/resources/blog" },
+        { name: "Videos", link: "/resources/videos" },
+        { name: "Downloads", link: "/resources/downloads" },
+        { name: "Document Preparation", link: "/resources/documentprep" },
+      ],
+    },
     { name: "About Us", link: "/aboutus" },
   ])
   const [menuOpen, setMenuOpen] = useState(false)
@@ -69,7 +88,7 @@ export const Header = () => {
   useEffect(() => {
     // Close sliding menu by clicking outside it
     const handleOutsideClick = (event) => {
-      const menu = document.querySelector(".sliding-menu")
+      const menu = document.querySelector(".dropdown-menu")
       const hamburger = document.querySelector(".hamburger")
       // Check if the click is outside the menu and hamburger
       if (
@@ -118,21 +137,29 @@ export const Header = () => {
           <span className="header-title"> Paladin Fiduciary</span>
         </Link>
         {navItems.map((item, index) => (
-          <Link key={index} to={item.link}>
-            <span className="nav-item"> {item.name}</span>
-          </Link>
+          <DropDownMenu key={index} menuItem={item} />
         ))}
       </nav>
-      {/* sliding menu contains hidden items */}
-      <div className={`sliding-menu ${menuOpen ? "active" : ""}`}>
-        <nav>
-          {menuItems.map((item, index) => (
-            <Link key={index} to={item.link}>
-              <h2 onClick={toggleMenu}>{item.name}</h2>
-            </Link>
-          ))}
-        </nav>
-      </div>
+      <nav className={`dropdown-menu ${menuOpen ? "active" : ""}`}>
+        {menuItems.map((item) => {
+          return (
+            <div className="dropdown-links" key={item.name}>
+              <Link to={item.link}>
+                <span className="link">{item.name}</span>
+              </Link>
+              {item.subLinks
+                ? item.subLinks.map((subLink) => (
+                    <div className="sub-link indented">
+                      <Link key={subLink.name} to={subLink.link}>
+                        <span>{subLink.name}</span>
+                      </Link>
+                    </div>
+                  ))
+                : null}
+            </div>
+          )
+        })}
+      </nav>
     </header>
   )
 }
