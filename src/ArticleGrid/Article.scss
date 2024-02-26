@@ -28,15 +28,14 @@
       object-fit: cover;
       border-radius: 10px;
       width: 100%;
-      height: 250px; /* Fixed initial height */
       max-height: 250px; /* Set max-height for the transition */
-      // transition: max-height 0.3s ease-in-out; /* Transition on max-height */
+      transition: max-height 0.3s ease-in-out; /* Transition on max-height */
 
-      // &.active {
-      //   height: auto;
-      //   max-height: 350px; /* Larger max-height for active images */
-      //   transition: max-height 0.3s ease-in-out; /* Ensure the transition is applied */
-      // }
+      //  &.active {
+      //    height: auto;
+      //    max-height: 350px; /* Larger max-height for active images */
+      //    transition: max-height 0.3s ease-in-out; /* Ensure the transition is applied */
+      //  }
     }
   }
 

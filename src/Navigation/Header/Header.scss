@@ -4,7 +4,7 @@ $menu-width: 300px;
 
 a {
   text-decoration: none;
-  color: $primary-color;
+  color: $paladin-purple;
 }
 
 .header {
@@ -14,7 +14,7 @@ a {
   position: sticky;
   position: -webkit-fixed;
   top: 0;
-  color: $primary-color;
+  color: $paladin-purple;
   z-index: 10;
 
   .header-menu {
@@ -42,7 +42,7 @@ a {
       .hamburger-slice {
         width: 30px;
         height: 3px;
-        background-color: $primary-color;
+        background-color: $paladin-purple;
         transition: 0.25s ease-in-out;
       }
       .line-1.active {
@@ -63,7 +63,7 @@ a {
       }
       .header-title {
         flex-shrink: 0;
-        color: $primary-color;
+        color: $paladin-purple;
         font-weight: 600;
         font-size: 2em;
         font-family: "leo";
@@ -89,7 +89,7 @@ a {
     padding: 0px 30px;
 
     a {
-      color: $primary-color;
+      color: $paladin-purple;
       font-family: "Open Sans", sans-serif;
       font-weight: 400;
       text-decoration: none;

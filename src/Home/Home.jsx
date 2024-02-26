@@ -46,9 +46,8 @@ export const Home = () => {
       <section className="business-info">
         <div className="contact">
           <h4>Contact:</h4>
-          <span>(707) 582-3181</span>
           <a href="tel:+17075823181">
-            <button className="call-now-button">Call Now</button>
+            <span>+1 (707) 582-3181</span>
           </a>
         </div>
         <div className="location-info">

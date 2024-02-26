@@ -1,0 +1,10 @@
+@import "../../App.scss";
+
+.call-now {
+  color: $paladin-purple;
+  border: 2px solid $paladin-purple;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 1;
+}

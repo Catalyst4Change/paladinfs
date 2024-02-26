@@ -17,6 +17,7 @@ import { Documents } from "./Resources/Documents/Documents"
 import { AboutUs } from "./AboutUs/AboutUs"
 import "./App.scss"
 import { Error } from "./Error/Error"
+import { CallNowButton } from "./assets/Components/CallNowButton"
 
 export const App = () => {
   const { pathname } = useLocation()
@@ -25,6 +26,7 @@ export const App = () => {
   }, [pathname])
   return (
     <main className="App">
+      <CallNowButton />
       <Routes>
         {/* error */}
         <Route path="*" element={<Error />} />
