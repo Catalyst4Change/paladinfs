@@ -5,7 +5,7 @@ import "./Header.scss"
 import { DropDownMenu } from "./DropDownMenu/DropDownMenu"
 
 export const Header = () => {
-  const [initialNavItems] = useState([
+  const [navItems] = useState([
     {
       name: "Services",
       link: "/services",
@@ -29,8 +29,6 @@ export const Header = () => {
     { name: "About Us", link: "/aboutus" },
   ])
   const [menuOpen, setMenuOpen] = useState(false)
-  const [navItems, setNavItems] = useState([])
-  const [menuItems, setMenuItems] = useState([])
   const [hamburgerVisible, setHamburgerVisible] = useState(false)
   const breakpoint = 768 // pixels
   const windowWidth = () => {
@@ -39,12 +37,8 @@ export const Header = () => {
 
   const checkBreakpoint = () => {
     if (windowWidth() >= breakpoint) {
-      setNavItems(initialNavItems)
-      setMenuItems([])
       setHamburgerVisible(false)
     } else {
-      setNavItems([])
-      setMenuItems(initialNavItems)
       setHamburgerVisible(true)
     }
   }
@@ -136,12 +130,14 @@ export const Header = () => {
           <img className="lion-icon" src={lionIcon} alt="lion icon" />
           <span className="header-title"> Paladin Fiduciary</span>
         </Link>
-        {navItems.map((item, index) => (
-          <DropDownMenu key={index} menuItem={item} />
-        ))}
+        {!hamburgerVisible
+          ? navItems.map((item, index) => (
+              <DropDownMenu key={index} menuItem={item} />
+            ))
+          : null}
       </nav>
       <nav className={`dropdown-menu ${menuOpen ? "active" : ""}`}>
-        {menuItems.map((item) => {
+        {navItems.map((item) => {
           return (
             <div className="dropdown-links" key={item.name}>
               <Link to={item.link}>
@@ -149,8 +145,8 @@ export const Header = () => {
               </Link>
               {item.subLinks
                 ? item.subLinks.map((subLink) => (
-                    <div className="sub-link indented">
-                      <Link key={subLink.name} to={subLink.link}>
+                    <div key={subLink.name} className="sub-link indented">
+                      <Link to={subLink.link}>
                         <span>{subLink.name}</span>
                       </Link>
                     </div>

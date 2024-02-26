@@ -23,8 +23,8 @@ export const DropDownMenu = ({ menuItem }) => {
           className={`dropdown-menu ${menuOpen || isHovered ? "active" : ""}`}
         >
           {subLinks.map((item, index) => (
-            <div className="sub-link">
-              <Link key={index} to={item.link}>
+            <div key={index} className="sub-link">
+              <Link to={item.link}>
                 <span onClick={toggleMenu}>{item.name}</span>
               </Link>
             </div>
