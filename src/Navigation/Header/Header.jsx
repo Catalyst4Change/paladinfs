@@ -109,10 +109,13 @@ export const Header = () => {
       <nav className="header-menu">
         {hamburgerVisible && (
           <div
-            tabIndex={1}
+            aria-controls="dropdown-menu"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             className="hamburger"
             onClick={toggleMenu}
             onKeyDown={handleKeyDown}
+            tabIndex={0}
           >
             {/* hamburger slices */}
             <div
@@ -139,14 +142,18 @@ export const Header = () => {
       <nav className={`dropdown-menu ${menuOpen ? "active" : ""}`}>
         {navItems.map((item) => {
           return (
-            <div className="dropdown-links" key={item.name}>
+            <div
+              onClick={toggleMenu}
+              className="dropdown-links"
+              key={item.name}
+            >
               <Link to={item.link}>
                 <span className="link">{item.name}</span>
               </Link>
               {item.subLinks
                 ? item.subLinks.map((subLink) => (
-                    <div key={subLink.name} className="sub-link indented">
-                      <Link to={subLink.link}>
+                    <div onClick={toggleMenu} className="sub-link indented">
+                      <Link key={subLink.name} to={subLink.link}>
                         <span>{subLink.name}</span>
                       </Link>
                     </div>
