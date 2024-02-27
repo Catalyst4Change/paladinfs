@@ -48,7 +48,11 @@ export const Article = ({ postDate, title, image, imgAlt, content }) => {
   }
 
   return (
-    <article ref={articleRef} style={combinedStyle} className="article">
+    <article
+      ref={articleRef}
+      style={combinedStyle}
+      className="article content-box"
+    >
       {postDate && <span>Posted on {postDate}</span>}
       {title && <h2 className="title">{title}</h2>}
       {image && (

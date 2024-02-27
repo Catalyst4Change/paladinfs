@@ -31,13 +31,18 @@ main {
 
 button {
   font-size: 1.5em;
-  border: 2px solid $paladin-purple;
-  border-radius: 10px;
   background-color: white;
-  color: paladin-purple;
+  border: 1px solid $gold;
+  color: $paladin-purple;
   font-weight: 500;
   margin-top: 20px;
   box-shadow: 5px 5px 0 rgb($gold, 0.5);
+}
+
+.content-box {
+  background-color: white;
+  border: 1px solid $gold;
+  box-shadow: 5px 5px 0 rgb($gold, 0.3);
 }
 
 .hidden {
