@@ -8,11 +8,12 @@ export const Footer = () => {
       <span>
         Website by <a href="mailto:email@catalyst.sex">Catalyst</a>
       </span>
-      {/* <span>Privacy Policy</span>
-      <span>Sitemap</span>
-      <span>Contact Us</span> */}
-      <a href="tel:+17075823181">
-        <span>Call Now</span>
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        href="https://coastfiduciary.com/wp-content/uploads/2015/09/CA_Professional_Fiduciaries_Code_of_Conduct.pdf"
+      >
+        <span>Privacy Policy</span>
       </a>
       <a href="mailto:paladinfiduciary@gmail.com">
         <span>Email</span>
