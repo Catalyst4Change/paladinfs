@@ -28,8 +28,6 @@ export const App = () => {
     <main className="App">
       <CallNowButton />
       <Routes>
-        {/* error */}
-        <Route path="*" element={<Error />} />
         {/* home */}
         <Route path="/" element={<Home />} />
         {/* services */}
@@ -53,9 +51,9 @@ export const App = () => {
         <Route path="/resources/documentprep/*" element={<Documents />} />
         {/* about us */}
         <Route path="/aboutus/*" element={<AboutUs />} />
+        {/* error */}
+        <Route path="*" element={<Error />} />
       </Routes>
     </main>
   )
 }
-// email LB
-// steal info from front page
